@@ -34,25 +34,29 @@ Currently leading a team of **8 engineers at VSAAS Technologies**, owning sprint
 
 ## 🚀 Key Architectures & Production Systems
 
-### 1. Shippzi B2B – Dedicated Rider Logistics Engine
-- **Role:** System Architect & Team Lead
-- **Stack:** Redis, WebSockets, Fastify, Node.js, MongoDB, React, Capacitor (Android), TomTom Maps, Linode
-- **Impact:** Designed an automated order-assignment and dispatch engine utilizing Redis in-memory pub/sub and WebSockets to route incoming orders in **sub-second latency (<800ms)**. Delivered from blank canvas to live production in **under 5 weeks**.
+### 1. Shippzi — Logistics Platform
+- **Role:** Architect & Engineering Lead
+- **Stack:** React.js, Capacitor, Node.js, Redis, WebSockets, Fastify, MongoDB
+- **Impact:** Developed the dedicated Rider App using React and Capacitor, powered by a real-time automated dispatch engine using Redis pub/sub and WebSockets to route orders instantly.
+- **Links:** [🌐 Live Website](https://shippzi.com/) · [📱 Rider App (Google Play)](https://play.google.com/store/apps/details?id=com.shippzi.rider)
 
-### 2. Shippzi B2C – Real-Time Ride-Hailing Platform
-- **Role:** Team Lead & Driver App Owner
-- **Stack:** React Native, Next.js, Fastify, Node.js, Google Maps SDK, Socket.io, MongoDB
-- **Impact:** Spearheaded full-team delivery of a live ride-hailing platform covering automated driver matching, continuous GPS breadcrumb tracking, and fare calculation in an intensive **3-week sprint**. Personally owned the driver-side React Native application.
+### 2. Oyride — Ride-Hailing Platform
+- **Role:** Lead Full Stack Engineer
+- **Stack:** React Native, Fastify, Google Maps SDK, Next.js, Node.js, MongoDB
+- **Impact:** Currently architecting and developing the complete ride-hailing ecosystem: Driver App, Customer App, and core Backend with real-time geospatial telemetry.
+- **Status:** 🚧 Under Active Development
 
-### 3. Vidhyapat – Full-Stack LMS & CRM Platform
+### 3. Vidhyapat — EdTech Ecosystem
 - **Role:** Full Stack Lead
-- **Stack:** MERN Stack, React.js, Node.js, Express, MongoDB, JWT Authentication
-- **Impact:** Unified 4 discrete stakeholder portals (Student Portal, Educator Console, Sales CRM, and Super Admin) with granular Role-Based Access Control (RBAC) and high-throughput aggregation pipelines.
+- **Stack:** React.js, Node.js, Express, MongoDB (MERN Stack), RBAC, JWT Authentication
+- **Impact:** Unified CRM, LMS administration panel, and student/educator interfaces built with strict role-based access control and high-throughput aggregation pipelines.
+- **Links:** [🌐 Live Website](https://vidhyapat.com/)
 
-### 4. Volta Cabs – Eco-Friendly Ride-Sharing Platform
-- **Role:** Frontend & UX Engineer
-- **Stack:** Ionic, TypeScript, Leaflet, Google Maps, SCSS, Figma
-- **Impact:** Engineered user, driver, and admin interfaces for EV and fuel ride-sharing fleets, featuring an interactive booking bottom sheet with dynamic coupon engines and route tracking.
+### 4. Volta Services — Ride-Sharing Apps
+- **Role:** UI/UX Developer
+- **Stack:** Ionic Framework, Figma, Adobe XD, Leaflet, Google Maps
+- **Impact:** Designed and developed the complete UI/UX flows for both the Customer and Driver ride-sharing applications, featuring in-app payments, scheduling, and live map views.
+- **Links:** [📱 Driver App (Google Play)](https://play.google.com/store/apps/details?id=com.yourvolta.driver) · [📱 Customer App (Google Play)](https://play.google.com/store/apps/details?id=com.yourvolta)
 
 ---
 

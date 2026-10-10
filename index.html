@@ -568,377 +568,100 @@
     </section>
 
     <!-- ==========================================================================
-         FEATURED ARCHITECTURES & PROJECTS
+         PRODUCTION ARCHITECTURES & DELIVERABLES
          ========================================================================== -->
-    <section class="projects-section" id="projects" aria-label="Featured Systems & Projects">
+    <section id="projects" class="projects-section" aria-label="Production Architecture & Deliverables">
       <div class="container">
         
         <div class="section-header">
           <div class="section-eyebrow">Production Architectures</div>
-          <h2 class="section-title">Engineered for concurrency, scale, and sub-second speed.</h2>
+          <h2 class="section-title">Production Architecture &amp; Deliverables</h2>
           <p class="section-subtitle">
-            Deep dive into the critical platforms I have architected, led, and delivered into live production.
+            High-concurrency platforms, real-time dispatch pipelines, and production mobile applications delivered for scale.
           </p>
         </div>
 
-        <!-- Filter Bar -->
-        <div class="project-filter-bar" role="tablist" aria-label="Filter projects by category">
-          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Systems (4)</button>
-          <button class="filter-btn" data-filter="logistics" role="tab" aria-selected="false">Logistics &amp; Dispatch</button>
-          <button class="filter-btn" data-filter="mobility" role="tab" aria-selected="false">Ride-Hailing &amp; Maps</button>
-          <button class="filter-btn" data-filter="saas" role="tab" aria-selected="false">Enterprise SaaS &amp; EdTech</button>
-        </div>
-
-        <div class="projects-grid">
-
-          <!-- PROJECT 1: Shippzi B2B -->
-          <article class="project-card" data-category="logistics">
-            <div class="project-info">
-              
-              <div class="project-meta-badges">
-                <span class="meta-badge">Enterprise Logistics</span>
-                <span class="meta-badge role">System Architect &amp; Lead</span>
-                <span class="meta-badge meta-badge-live">Live in Production</span>
-              </div>
-
-              <h3 class="project-name">Shippzi B2B – Dedicated Rider Logistics Engine</h3>
-              
-              <p class="project-summary">
-                A dedicated-rider fulfillment ecosystem connecting retail vendor stores with designated delivery riders. 
-                Vendors submit batch orders through an administrative portal, which immediately routes each package to the rider 
-                assigned to that store location for automated fulfillment.
+        <div class="project-grid">
+          
+          <!-- Shippzi Logistics -->
+          <div class="project-card">
+            <div>
+              <h3>📦 Shippzi — Logistics Platform</h3>
+              <p>
+                <strong>Role:</strong> Architect &amp; Engineering Lead<br>
+                Developed the dedicated Rider App using React and Capacitor, powered by a real-time automated dispatch engine using Redis pub/sub and WebSockets to route orders instantly.
               </p>
-
-              <div class="architecture-box">
-                <div class="architecture-box-header">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                  <span>Architecture &amp; Real-Time Engine</span>
-                </div>
-                <p>
-                  Designed an automated dispatch engine using <strong>Redis pub/sub</strong> and bi-directional <strong>WebSockets</strong>. 
-                  Incoming orders are matched against in-memory geographic coordinates and rider states, eliminating manual coordination 
-                  and dispatching notifications to Android devices in <strong>sub-second latency (&lt;800ms)</strong>.
-                </p>
-              </div>
-
-              <ul class="project-specs-list">
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Turnkey Delivery:</strong> Shipped from zero to live production in under 5 weeks on Linode.</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Routing Optimization:</strong> Integrated TomTom Maps SDK, Leaflet, and OSRM for dynamic multi-stop routing.</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Mobile Client:</strong> Engineered dedicated Rider App using MERN stack packaged via Capacitor for Android.</span>
-                </li>
-              </ul>
-
-              <div class="tech-stack-row">
-                <span class="tag-small">Redis</span>
-                <span class="tag-small">WebSockets</span>
-                <span class="tag-small">Node.js</span>
-                <span class="tag-small">Fastify</span>
-                <span class="tag-small">MongoDB</span>
-                <span class="tag-small">Capacitor Android</span>
-                <span class="tag-small">TomTom Maps</span>
-                <span class="tag-small">Linode</span>
+              <div class="tech-tags">
+                <span>React.js</span>
+                <span>Capacitor</span>
+                <span>Node.js</span>
+                <span>Redis</span>
               </div>
             </div>
-
-            <!-- Architecture Diagram Panel -->
-            <div class="project-visual-panel" aria-hidden="true">
-              <div class="mockup-window-header">
-                <div class="mockup-dots">
-                  <div class="mockup-dot red"></div>
-                  <div class="mockup-dot yellow"></div>
-                  <div class="mockup-dot green"></div>
-                </div>
-                <span class="mockup-label">shippzi-dispatch-pipeline.ts</span>
-              </div>
-
-              <div class="system-diagram">
-                <div class="diagram-node">
-                  <span>Vendor Portal (Next.js)</span>
-                  <span class="diagram-metric">POST /order</span>
-                </div>
-                <div class="diagram-connector">↓ REST (Event Trigger)</div>
-                <div class="diagram-node active">
-                  <span>Redis In-Memory Queue</span>
-                  <span class="diagram-metric">&lt;50ms Queue Time</span>
-                </div>
-                <div class="diagram-connector">↓ Pub/Sub Dispatch</div>
-                <div class="diagram-node active">
-                  <span>WebSocket Gateway</span>
-                  <span class="diagram-metric">Real-time Push</span>
-                </div>
-                <div class="diagram-connector">↓ Low-Latency Sync</div>
-                <div class="diagram-node">
-                  <span>Rider App (Capacitor/Android)</span>
-                  <span class="diagram-metric">Instant Notification</span>
-                </div>
-              </div>
+            <div class="project-links">
+              <a href="https://shippzi.com/" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-web">🌐 Live Website</a>
+              <a href="https://play.google.com/store/apps/details?id=com.shippzi.rider" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-app">📱 Rider App</a>
             </div>
-          </article>
+          </div>
 
-          <!-- PROJECT 2: Shippzi B2C -->
-          <article class="project-card" data-category="mobility">
-            <div class="project-info">
-              
-              <div class="project-meta-badges">
-                <span class="meta-badge">High-Concurrency Mobility</span>
-                <span class="meta-badge role">Team Lead &amp; Driver App Owner</span>
-                <span class="meta-badge meta-badge-live">Live in Production</span>
-              </div>
-
-              <h3 class="project-name">Shippzi B2C – Real-Time Ride-Hailing Platform</h3>
-              
-              <p class="project-summary">
-                A live, on-demand ride-hailing and mobility system connecting passengers with nearby vehicle drivers. 
-                Features automated driver matching, continuous GPS breadcrumb tracking, fare calculation, in-app payments, 
-                and post-trip ratings.
+          <!-- Oyride / Shippzi B2C -->
+          <div class="project-card">
+            <div>
+              <h3>🚗 Oyride — Ride-Hailing Platform</h3>
+              <p>
+                <strong>Role:</strong> Lead Full Stack Engineer<br>
+                Currently architecting and developing the complete ride-hailing ecosystem: Driver App, Customer App, and core Backend using React Native, Fastify, and Google Maps SDK.
               </p>
-
-              <div class="architecture-box">
-                <div class="architecture-box-header">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                  <span>Architecture &amp; Geospatial Tracking</span>
-                </div>
-                <p>
-                  Led the cross-functional engineering team to build and launch the platform in an intensive 
-                  <strong>3-week production sprint</strong>. Built proximity matching algorithms using geospatial queries 
-                  and <strong>Google Maps SDK</strong> for sub-meter driver accuracy, polyline route rendering, and live bearing updates.
-                </p>
-              </div>
-
-              <ul class="project-specs-list">
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Driver Application:</strong> Personally developed the driver-side React Native app end-to-end.</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Microservices:</strong> Fastify &amp; Node.js backend handles trip states, real-time pricing, and WebSockets.</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Portal Suite:</strong> Admin portals built with Next.js for live fleet supervision and trip disputes.</span>
-                </li>
-              </ul>
-
-              <div class="tech-stack-row">
-                <span class="tag-small">React Native</span>
-                <span class="tag-small">Next.js</span>
-                <span class="tag-small">Node.js</span>
-                <span class="tag-small">Fastify</span>
-                <span class="tag-small">Google Maps SDK</span>
-                <span class="tag-small">Socket.io</span>
-                <span class="tag-small">MongoDB</span>
+              <div class="tech-tags">
+                <span>React Native</span>
+                <span>Fastify</span>
+                <span>Google Maps SDK</span>
               </div>
             </div>
-
-            <!-- Architecture Diagram Panel -->
-            <div class="project-visual-panel" aria-hidden="true">
-              <div class="mockup-window-header">
-                <div class="mockup-dots">
-                  <div class="mockup-dot red"></div>
-                  <div class="mockup-dot yellow"></div>
-                  <div class="mockup-dot green"></div>
-                </div>
-                <span class="mockup-label">driver-telemetry-engine.js</span>
-              </div>
-
-              <div class="system-diagram">
-                <div class="diagram-node">
-                  <span>Passenger Request</span>
-                  <span class="diagram-metric">Pickup &amp; Drop Coordinates</span>
-                </div>
-                <div class="diagram-connector">↓ Spatial Proximity Match</div>
-                <div class="diagram-node active">
-                  <span>Google Maps SDK Engine</span>
-                  <span class="diagram-metric">Radius Filtering</span>
-                </div>
-                <div class="diagram-connector">↓ Driver Broadcast</div>
-                <div class="diagram-node active">
-                  <span>Driver React Native App</span>
-                  <span class="diagram-metric">Accept / Decline Window</span>
-                </div>
-                <div class="diagram-connector">↓ Turn-by-Turn Nav</div>
-                <div class="diagram-node">
-                  <span>Live Breadcrumb Telemetry</span>
-                  <span class="diagram-metric">WebSocket Updates</span>
-                </div>
-              </div>
+            <div class="project-links">
+              <span class="badge-dev-status">🚧 Under Active Development</span>
             </div>
-          </article>
+          </div>
 
-          <!-- PROJECT 3: Vidhyapat EdTech -->
-          <article class="project-card" data-category="saas">
-            <div class="project-info">
-              
-              <div class="project-meta-badges">
-                <span class="meta-badge">Enterprise EdTech</span>
-                <span class="meta-badge role">Full Stack Architecture Lead</span>
-              </div>
-
-              <h3 class="project-name">Vidhyapat – Full-Stack LMS &amp; CRM Platform</h3>
-              
-              <p class="project-summary">
-                A unified multi-portal EdTech management platform engineered for institutional scale. Integrates a lead-capturing 
-                CRM, central LMS administration console, interactive student learning portal, and an educator management suite.
+          <!-- Vidhyapat -->
+          <div class="project-card">
+            <div>
+              <h3>🎓 Vidhyapat — EdTech Ecosystem</h3>
+              <p>
+                <strong>Role:</strong> Full Stack Lead<br>
+                Unified CRM, LMS administration panel, and student/educator interfaces built on the MERN stack with role-based access control (RBAC) and JWT authentication.
               </p>
-
-              <div class="architecture-box">
-                <div class="architecture-box-header">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                  <span>Modular Portals &amp; Role-Based Security</span>
-                </div>
-                <p>
-                  Architected on the <strong>MERN stack</strong> with strict Role-Based Access Control (RBAC) separating administrative, 
-                  educator, and student privileges. Implemented high-performance MongoDB aggregation pipelines for student analytics, 
-                  course completion metrics, and sales conversion funnels.
-                </p>
-              </div>
-
-              <ul class="project-specs-list">
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Multi-Portal Federation:</strong> Single scalable backend serving 4 independent frontend experiences.</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Media Delivery:</strong> Secure video lecture distribution with progress tracking and quiz validation.</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Lead Automation:</strong> Built CRM workflow rules that automate counselor follow-ups and trial enrollments.</span>
-                </li>
-              </ul>
-
-              <div class="tech-stack-row">
-                <span class="tag-small">React.js</span>
-                <span class="tag-small">Node.js</span>
-                <span class="tag-small">Express.js</span>
-                <span class="tag-small">MongoDB</span>
-                <span class="tag-small">JWT Authentication</span>
-                <span class="tag-small">RESTful APIs</span>
+              <div class="tech-tags">
+                <span>React.js</span>
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>MongoDB</span>
               </div>
             </div>
-
-            <!-- Architecture Diagram Panel -->
-            <div class="project-visual-panel" aria-hidden="true">
-              <div class="mockup-window-header">
-                <div class="mockup-dots">
-                  <div class="mockup-dot red"></div>
-                  <div class="mockup-dot yellow"></div>
-                  <div class="mockup-dot green"></div>
-                </div>
-                <span class="mockup-label">vidhyapat-portal-rbac.json</span>
-              </div>
-
-              <div class="system-diagram">
-                <div class="diagram-node">
-                  <span>Student Learning Portal</span>
-                  <span class="diagram-metric">Role: STUDENT</span>
-                </div>
-                <div class="diagram-node">
-                  <span>Educator Console</span>
-                  <span class="diagram-metric">Role: INSTRUCTOR</span>
-                </div>
-                <div class="diagram-connector">↓ JWT Authentication Guard</div>
-                <div class="diagram-node active">
-                  <span>Central Node / Express API</span>
-                  <span class="diagram-metric">RBAC Middleware</span>
-                </div>
-                <div class="diagram-connector">↓ Aggregation &amp; Query Layer</div>
-                <div class="diagram-node active">
-                  <span>MongoDB Atlas</span>
-                  <span class="diagram-metric">LMS &amp; CRM Storage</span>
-                </div>
-              </div>
+            <div class="project-links">
+              <a href="https://vidhyapat.com/" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-web">🌐 Live Website</a>
             </div>
-          </article>
+          </div>
 
-          <!-- PROJECT 4: Volta Cabs -->
-          <article class="project-card" data-category="mobility">
-            <div class="project-info">
-              
-              <div class="project-meta-badges">
-                <span class="meta-badge">Clean Mobility</span>
-                <span class="meta-badge role">Frontend &amp; UX Engineer</span>
-              </div>
-
-              <h3 class="project-name">Volta Cabs – Eco-Friendly Ride-Sharing Ecosystem</h3>
-              
-              <p class="project-summary">
-                A dual-application ride-sharing platform engineered specifically for electric (EV) and conventional fleets. 
-                Delivered intuitive passenger booking flows, driver acceptance dashboards, and corporate fleet oversight tools.
+          <!-- Volta Services -->
+          <div class="project-card">
+            <div>
+              <h3>⚡ Volta Services — Ride-Sharing Apps</h3>
+              <p>
+                <strong>Role:</strong> UI/UX Developer<br>
+                Designed and developed the complete UI/UX flows for both the Customer and Driver ride-sharing applications, featuring in-app payments, scheduling, and live map views.
               </p>
-
-              <div class="architecture-box">
-                <div class="architecture-box-header">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                  <span>Component Engineering &amp; Native UX</span>
-                </div>
-                <p>
-                  Engineered an interactive <strong>bottom sheet booking mechanism</strong> incorporating route calculations, 
-                  live EV charging estimations, promo code engines, and map renderers. Produced design prototypes in Figma 
-                  and Adobe XD before implementing native-performing code in Ionic.
-                </p>
-              </div>
-
-              <ul class="project-specs-list">
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Driver &amp; Passenger Apps:</strong> Unified UX design language across two distinct native applications.</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Marketing Web:</strong> Designed and deployed the Volta Cabs responsive marketing portal.</span>
-                </li>
-              </ul>
-
-              <div class="tech-stack-row">
-                <span class="tag-small">Ionic</span>
-                <span class="tag-small">TypeScript</span>
-                <span class="tag-small">Leaflet</span>
-                <span class="tag-small">Google Maps</span>
-                <span class="tag-small">Figma</span>
-                <span class="tag-small">SCSS</span>
+              <div class="tech-tags">
+                <span>Ionic Framework</span>
+                <span>Figma</span>
+                <span>Adobe XD</span>
               </div>
             </div>
-
-            <!-- Architecture Diagram Panel -->
-            <div class="project-visual-panel" aria-hidden="true">
-              <div class="mockup-window-header">
-                <div class="mockup-dots">
-                  <div class="mockup-dot red"></div>
-                  <div class="mockup-dot yellow"></div>
-                  <div class="mockup-dot green"></div>
-                </div>
-                <span class="mockup-label">volta-fleet-experience.tsx</span>
-              </div>
-
-              <div class="system-diagram">
-                <div class="diagram-node">
-                  <span>Passenger Booking UI</span>
-                  <span class="diagram-metric">EV vs Fuel Choice</span>
-                </div>
-                <div class="diagram-connector">↓ Interactive Bottom Sheet</div>
-                <div class="diagram-node active">
-                  <span>Coupon &amp; Fare Engine</span>
-                  <span class="diagram-metric">Dynamic Price Calc</span>
-                </div>
-                <div class="diagram-connector">↓ Map Render Engine</div>
-                <div class="diagram-node active">
-                  <span>Google Maps &amp; Leaflet</span>
-                  <span class="diagram-metric">Live Route &amp; Pickup</span>
-                </div>
-              </div>
+            <div class="project-links">
+              <a href="https://play.google.com/store/apps/details?id=com.yourvolta.driver" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-app">📱 Driver App</a>
+              <a href="https://play.google.com/store/apps/details?id=com.yourvolta" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-app">📱 Customer App</a>
             </div>
-          </article>
+          </div>
 
         </div>
 
